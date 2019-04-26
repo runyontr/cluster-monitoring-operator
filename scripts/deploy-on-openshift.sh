@@ -21,8 +21,8 @@ oc annotate ns/openshift-monitoring openshift.io/node-selector=
 oc label ns/openshift-monitoring openshift.io/cluster-monitoring=true
 
 oc apply -f manifests/01-namespace.yaml
-oc apply -f manifests/02-role-binding.yaml
 oc apply -f manifests/02-role.yaml
-oc apply -f manifests/03-config.yaml
-oc apply -f manifests/03-etcd-secret.yaml
+oc apply -f manifests/03-role-binding.yaml
 oc apply -f manifests/04-deployment.yaml
+oc apply -f manifests/05-clusteroperator.yaml
+oc apply -f manifests/06-operatorgroup.yaml
